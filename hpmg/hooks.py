@@ -127,13 +127,13 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 # 	"all": [
 # 		"hpmg.tasks.all"
 # 	],
-# 	"daily": [
-# 		"hpmg.tasks.daily"
-# 	],
+	"daily": [
+		"hpmg.hpmg.cron_job.job_offer_due"
+	],
 # 	"hourly": [
 # 		"hpmg.tasks.hourly"
 # 	],
@@ -143,7 +143,7 @@ app_license = "MIT"
 # 	"monthly": [
 # 		"hpmg.tasks.monthly"
 # 	],
-# }
+}
 
 # Testing
 # -------
