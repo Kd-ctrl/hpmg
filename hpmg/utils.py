@@ -7,6 +7,5 @@ def send_mail(reference_doctype,reference_name, recipients, msg, title, attachme
         "reference_doctype":reference_doctype,
         "reference_name":reference_name,
     }
-    if attachments:email_args["attachments"]= attachments
     
     frappe.enqueue(method = frappe.sendmail, queue = 'short', timeout = 300, **email_args)
