@@ -1,6 +1,6 @@
 import frappe
 
-
+@frappe.whitelist()
 def send_mail(reference_doctype, reference_name, recipients, msg, title, attachments=None):
     email_args = {
         "recipients": recipients,
