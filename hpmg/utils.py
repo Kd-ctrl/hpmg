@@ -1,15 +1,17 @@
 import frappe
 
-def send_mail(reference_doctype,reference_name, recipients, msg, title, attachments=None):
+
+def send_mail(reference_doctype, reference_name, recipients, msg, title, attachments=None):
     email_args = {
-        "recipients":recipients,
-        "message":msg,
-        "subject":title,
-        "reference_doctype":reference_doctype,
-        "reference_name":reference_name,
+        "recipients": recipients,
+        "message": msg,
+        "subject": title,
+        "reference_doctype": reference_doctype,
+        "reference_name": reference_name,
+        "attachments": attachments if attachments else [],
     }
     
-    frappe.enqueue(method = frappe.sendmail, queue = 'short', timeout = 300, **email_args)
+    frappe.enqueue(method=frappe.sendmail, queue='short', timeout=300, **email_args)
 
 
 @frappe.whitelist()
