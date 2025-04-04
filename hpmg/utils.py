@@ -24,7 +24,7 @@ def get_documents_by_location(location_name):
         """, (location_name,), as_dict=True)
 
         for each_doc in results:
-           all_docs.append(frappe.get_all("Location Linking", filters = {"name":each_doc["name"]}, fields = ["name", "document"]))
+           all_docs.append(frappe.get_all("Location Linking", filters = {"name":each_doc["name"]}, fields = ["*"]))
         
         return all_docs
     except Exception as e:
